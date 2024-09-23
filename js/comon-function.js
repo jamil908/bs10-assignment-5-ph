@@ -1,3 +1,4 @@
+
 function getInputValueById(id){
     const inputValue =document.getElementById(id).value;
     const inputNumber = parseFloat(inputValue);
@@ -10,3 +11,7 @@ function getInnerTextById(id){
     const textValueNumber =parseFloat(textValue);
     return textValueNumber;
 }
+
+
+
+
