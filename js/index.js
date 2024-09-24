@@ -2,8 +2,17 @@
 
 
 let totalMoney =parseFloat( document.getElementById('total-amount').innerHTML)
-let donatesNow = document.getElementsByClassName('donates-now')
+// let donatesNow = document.getElementsByClassName('donates-now')
 let modalClick =document.getElementById('modall')
+
+
+
+function switchHomePage(){
+    window.location.href ="home.html"
+}
+function switchBlogPage(){
+    window.location.href ="blog.html"
+}
 
 function historyItem(id){
     const inputNumber=getInputValueById(id)
@@ -31,75 +40,35 @@ function historyItem(id){
 }
 
 // for 1st section 
+function handleDonation(inputFieldId,donationAmount){
+    
+    
+    const inputValue = getInputValueById(inputFieldId)
+    const addMoney=parseFloat(inputValue)
+    if(!getAlert(addMoney,totalMoney)){
+        return;
+    }
+    
+    totalMoney -= addMoney;
+   
+     document.getElementById('total-amount').innerText = totalMoney.toFixed(2)
+     const addDonateMoney= getInnerTextById(donationAmount);
+     const newAddDonateMoney = addDonateMoney + addMoney;
+     document.getElementById(donationAmount).innerText =newAddDonateMoney.toFixed(2)
+     historyItem(inputFieldId);
+    
+}
+
 
 document.getElementById('donate-money').addEventListener('click',function (){
-    const addMoney = getInputValueById('input-field-number')
-    if(isNaN(addMoney)|| addMoney=== ""){
-        document.getElementById('donate-money').removeAttribute('onclick')
-        return alert('you are failed to donate')
-    }
-    if(addMoney <0 || totalMoney <addMoney){
-        return alert('you are failed to donate')
-    }
-
-    totalMoney = totalMoney - addMoney;
-   
-     document.getElementById('total-amount').innerText = totalMoney.toFixed(2)
-     const addDonateMoney= getInnerTextById('add-donate')
-     const newAddDonateMoney =addDonateMoney+ addMoney;
-     document.getElementById('add-donate').innerText =newAddDonateMoney.toFixed(2)
-     historyItem("input-field-number")
-})  
-
-// for 2nd section
-
-
-
+    handleDonation('input-field-number','add-donate');
+})
 document.getElementById('donate-money-two').addEventListener('click',function (){
-    
-    const addMoney = getInputValueById('input-field-number-two')
-    if(addMoney <0 || totalMoney <addMoney){
-        return alert('you are failed to donate')
-    }
-
-    totalMoney = totalMoney - addMoney;
-   
-     document.getElementById('total-amount').innerText = totalMoney.toFixed(2)
-     const addDonateMoney= getInnerTextById('add-donate-two')
-     const newAddDonateMoney =addDonateMoney+ addMoney;
-     document.getElementById('add-donate-two').innerText =newAddDonateMoney.toFixed(2)
-     historyItem("input-field-number-two")
-     
-})  
-
-
-
-
-// for 3rd section
-
-
-
-    
+    handleDonation('input-field-number-two','add-donate-two');
+})
 document.getElementById('donate-money-third').addEventListener('click',function (){
-    const addMoney = getInputValueById('input-field-number-third')
-    if(addMoney <0 || totalMoney <addMoney){
-        return alert('you are failed to donate')
-    }
-
-    totalMoney = totalMoney - addMoney;
-   
-     document.getElementById('total-amount').innerText = totalMoney.toFixed(2)
-     const addDonateMoney= getInnerTextById('add-donate-third')
-     const newAddDonateMoney =addDonateMoney+ addMoney;
-     document.getElementById('add-donate-third').innerText =newAddDonateMoney.toFixed(2)
-     historyItem("input-field-number-third")
-     
-})  
-
-
-
-
-
+    handleDonation('input-field-number-third','add-donate-third');
+})
 
 donateTab = document.getElementById('donate-btn')
 sectionDonate= document.getElementsByClassName('section')
