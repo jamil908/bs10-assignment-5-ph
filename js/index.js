@@ -11,7 +11,7 @@ function switchHomePage(){
     window.location.href ="home.html"
 }
 function switchBlogPage(){
-    window.location.href ="blog.html"
+    window.location.href ="index.html"
 }
 
 function historyItem(id){
