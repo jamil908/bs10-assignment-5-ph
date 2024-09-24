@@ -6,15 +6,14 @@ let totalMoney =parseFloat( document.getElementById('total-amount').innerHTML)
 let modalClick =document.getElementById('modall')
 
 
-
+function switchBlogPage(){
+    window.location.href ="home.html"
+}
 function switchHomePage(){
     window.location.href ="index.html"  
 }
 
 
-function switchBlogPage(){
-    window.location.href ="home.html"
-}
 
 function historyItem(id){
     const inputNumber=getInputValueById(id)
