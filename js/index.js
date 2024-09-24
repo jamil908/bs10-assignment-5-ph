@@ -8,10 +8,12 @@ let modalClick =document.getElementById('modall')
 
 
 function switchHomePage(){
-    window.location.href ="home.html"
+    window.location.href ="index.html"  
 }
+
+
 function switchBlogPage(){
-    window.location.href ="index.html"
+    window.location.href ="home.html"
 }
 
 function historyItem(id){
