@@ -93,6 +93,8 @@ donateTab.addEventListener('click',function(){
         sectionDonate[i].classList.remove('hidden')
     donateTab.classList.add(  'font-semibold',  'backdrop-blur-sm', 'text-black', 'bg-lime-400',)
     historyTab.classList.remove('bg-lime-400',  'font-semibold',  'backdrop-blur-sm', 'text-black',)
+    const history= document.getElementById('history-list')
+    history.classList.add('hidden')
     
 })
 
