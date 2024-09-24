@@ -17,11 +17,11 @@ function switchBlogPage(){
 function historyItem(id){
     const inputNumber=getInputValueById(id)
     const historyItems=document.createElement("div");
-    historyItems.className ="  bg-white mx-8 mt-8 rounded-md border-2 border-gray-500 w-full p-12";
+    historyItems.className ="  bg-white mt-10  md:mt-22 rounded-md border-2 border-gray-500 w-8/12 mx-auto pt-4";
     historyItems.innerHTML =`
         <p class = "text-2xl text-slate-900 font-bold ">${inputNumber.toFixed(2)}Taka is Donate for Flood at Noakhali</p>
 
-    <p class = "text-xs text-gray-500">${new Date().toLocaleDateString('en-US',
+    <p class = "text-xl font-bold text-gray-500">${new Date().toLocaleDateString('en-US',
         {
             year:'numeric',
             month:'long',
