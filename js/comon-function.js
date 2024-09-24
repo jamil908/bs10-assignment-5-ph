@@ -18,13 +18,13 @@ function getAlert(addMoney,totalMoney){
     if(addMoney == 'number' ||  totalMoney > addMoney){
         document.getElementById('my_modal_1').showModal();
        
-        return true
+        return true;
     }
     if( isNaN(addMoney) ||  addMoney < 0 || totalMoney < addMoney){
         document.getElementById('donate-money').removeAttribute('onclick')
         document.getElementById('donate-money-two').removeAttribute('onclick')
         document.getElementById('donate-money-third').removeAttribute('onclick')
-        alert('you have failed to donate')
+        alert('You have failed to donate')
         document.getElementById('my_modal_1').close();
         document.getElementById('my_modal_2').close();
         document.getElementById('my_modal_3').close();
