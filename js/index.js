@@ -18,11 +18,11 @@ function switchHomePage(){
 function historyItem(id){
     const inputNumber=getInputValueById(id)
     const historyItems=document.createElement("div");
-    historyItems.className ="  bg-white mt-10  md:mt-22 rounded-md border-2 border-gray-500 w-8/12 mx-auto pt-4";
+    historyItems.className ="  bg-white mt-20  md:mt-22 rounded-md border-2 border-gray-500 w-8/12 mx-auto pt-4";
     historyItems.innerHTML =`
-        <p class = "text-2xl text-slate-900 font-bold ">${inputNumber.toFixed(2)}Taka is Donate for Flood at Noakhali</p>
+        <p class = "md:text-2xl text-xl text-slate-900 font-bold mx-auto">${inputNumber.toFixed(2)}Taka is Donate for Flood at Noakhali</p>
 
-    <p class = "text-xl font-bold text-gray-500">${new Date().toLocaleDateString('en-US',
+    <p class = "md:text-xl text-xs font-bold text-gray-500 mx-auto">${new Date().toLocaleDateString('en-US',
         {
             year:'numeric',
             month:'long',
